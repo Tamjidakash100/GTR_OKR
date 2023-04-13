@@ -1,0 +1,18 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GTR_OKR.Models
+{
+    public class User
+    {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int DeptId { get; set; }
+        public int ComId { get; set; }
+        [ForeignKey(nameof(DeptId))]
+        public Department Department { get; set; }
+        [ForeignKey(nameof(ComId))]
+        public Company Company { get; set; }
+    }
+}
