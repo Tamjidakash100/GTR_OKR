@@ -10614,19 +10614,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elite-Gadget\\.nuget\\packages\\": {}
+    "C:\\Users\\SHAFIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+      "projectUniqueName": "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
       "projectName": "GTR_OKR",
-      "projectPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
-      "packagesPath": "C:\\Users\\Elite-Gadget\\.nuget\\packages\\",
-      "outputPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\obj\\",
+      "projectPath": "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+      "packagesPath": "C:\\Users\\SHAFIN\\.nuget\\packages\\",
+      "outputPath": "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Elite-Gadget\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SHAFIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10702,7 +10702,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
