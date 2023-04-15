@@ -27,7 +27,6 @@ namespace GTR_OKR.Controllers
         {
             return _userInfo.GetCompanyList();
         }
-
         
         [HttpPost]
         public string PostCompany(Company company)

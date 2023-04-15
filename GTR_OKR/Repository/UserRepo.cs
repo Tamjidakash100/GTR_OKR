@@ -48,7 +48,9 @@ namespace GTR_OKR.Repository
 
         public Company GetCompanyByEmail(string email)
         {
-            throw new NotImplementedException();
+            Company company =  _db.Companies.FirstOrDefault(c=>c.Email==email) ;
+            
+            return company;
         }
 
         public List<Company> GetCompanyList()
