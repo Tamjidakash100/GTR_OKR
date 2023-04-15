@@ -42,7 +42,7 @@ namespace GTR_OKR.Repository
 
         public List<Company> GetCompanyList()
         {
-            throw new NotImplementedException();
+            return _db.Companies.ToList();
         }
 
         public List<User> GetDeptByCom(int comId)
