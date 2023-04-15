@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using GTR_OKR.Context;
 using GTR_OKR.Models;
 using GTR_OKR.Interfaces;
+using Microsoft.AspNetCore.Cors;
 
 namespace GTR_OKR.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [EnableCors]
     public class UserInfoController : ControllerBase
     {
         private readonly IUserInfo _userInfo;
@@ -54,7 +56,7 @@ namespace GTR_OKR.Controllers
         }
 
         [HttpPost]
-         public IActionResult CreateDept(Department department)
+         public IActionResult CreateDept([FromBody]Department department)
         {
             return Ok(_userInfo.CreateDept(department));
         }

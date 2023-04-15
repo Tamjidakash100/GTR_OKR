@@ -8,6 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<OkrDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
+var mycors = "cors";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(mycors,
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7142/").AllowAnyHeader().AllowAnyMethod();
+        });
+});
 builder.Services.AddTransient<IUserInfo, UserRepo>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -22,7 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(mycors);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
