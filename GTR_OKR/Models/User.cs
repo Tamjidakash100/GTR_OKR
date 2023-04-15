@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GTR_OKR.Models
 {
@@ -7,7 +8,9 @@ namespace GTR_OKR.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Name { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
+        public string Phone { get; set; }
         public int DeptId { get; set; }
         public int ComId { get; set; }
         [ForeignKey(nameof(DeptId))]
