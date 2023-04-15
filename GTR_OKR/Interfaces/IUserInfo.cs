@@ -5,6 +5,7 @@ namespace GTR_OKR.Interfaces
     public interface IUserInfo
     {
         string CreateCompany(Company company);
+        string EditCompany(Company company);
         List<Company> GetCompanyList();
         Company GetCompanyByEmail(string email);
         string CreateUser(User user);

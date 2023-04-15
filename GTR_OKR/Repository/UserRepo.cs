@@ -35,6 +35,17 @@ namespace GTR_OKR.Repository
             throw new NotImplementedException();
         }
 
+        public string EditCompany(Company company)
+        {
+            _db.Companies.Update(company);
+            var state = _db.SaveChanges();
+            if (state >0)
+            {
+                return "Successful";
+            }
+            return "Failed";
+        }
+
         public Company GetCompanyByEmail(string email)
         {
             throw new NotImplementedException();
