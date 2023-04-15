@@ -1,13 +1,28 @@
-﻿using GTR_OKR.Interfaces;
+﻿using GTR_OKR.Context;
+using GTR_OKR.Interfaces;
 using GTR_OKR.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
+using System.Web.Http.ModelBinding;
 
 namespace GTR_OKR.Repository
 {
     public class UserRepo : IUserInfo
     {
+        OkrDbContext _db;
+        public UserRepo(OkrDbContext db)
+        {
+            _db = db;
+        }
         public string CreateCompany(Company company)
         {
-            throw new NotImplementedException();
+            _db.Companies.Add(company);
+            var state = _db.SaveChanges();
+            if (state >0)
+            {
+                return "Successful";
+            }
+            return "Failed";
         }
 
         public string CreateDept(Department department)
