@@ -27,7 +27,14 @@ namespace GTR_OKR.Repository
 
         public string CreateDept(Department department)
         {
-            throw new NotImplementedException();
+            _db.Departments.Add(department);
+           var state = _db.SaveChanges();
+            if(state >0)
+            {
+                return "Successfull";
+                    
+            }
+            return "Failed";
         }
 
         public string CreateUser(User user)
@@ -48,7 +55,9 @@ namespace GTR_OKR.Repository
 
         public Company GetCompanyByEmail(string email)
         {
-            throw new NotImplementedException();
+            Company company =  _db.Companies.FirstOrDefault(c=>c.Email==email) ;
+            
+            return company;
         }
 
         public List<Company> GetCompanyList()
@@ -56,7 +65,7 @@ namespace GTR_OKR.Repository
             return _db.Companies.ToList();
         }
 
-        public List<User> GetDeptByCom(int comId)
+        public List<Department> GetDeptByCom(int comId)
         {
             throw new NotImplementedException();
         }

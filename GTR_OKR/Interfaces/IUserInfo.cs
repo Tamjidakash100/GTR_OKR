@@ -14,7 +14,7 @@ namespace GTR_OKR.Interfaces
         User GetUserById(int id);
         User GetUserByEmail(string email);
         string CreateDept(Department department);
-        List<User> GetDeptByCom(int comId);
+        List<Department> GetDeptByCom(int comId);
         User GetDeptById(int id);
 
     }
