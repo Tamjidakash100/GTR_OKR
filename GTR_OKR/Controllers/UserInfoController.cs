@@ -14,7 +14,6 @@ namespace GTR_OKR.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [EnableCors]
     public class UserInfoController : ControllerBase
     {
         private readonly IUserInfo _userInfo;
@@ -59,6 +58,12 @@ namespace GTR_OKR.Controllers
          public IActionResult CreateDept([FromBody]Department department)
         {
             return Ok(_userInfo.CreateDept(department));
+        }
+        [HttpGet]
+        public IActionResult GetDeptByCom(int comId)
+        {
+            var deptList = _userInfo.GetDeptByCom(comId);
+            return Ok(deptList);
         }
     }
 }
