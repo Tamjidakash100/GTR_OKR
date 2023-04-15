@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M7/mMEGB8d9mmIZ4s9chEF+Eu/eYVc6Brqtwn1KbJqbK83Aln+HWkJ0S4Zi8F1e/Qi+SJjIm4Ic3kxrmmwxOyg==",
+  "dgSpecHash": "Zio4QkByQm2STSTEyqB46I6vidnFVx1kH8S7fUhZsgZcSXc8NZDdwDP2vJanNRSxvUBToXbPyD4BjZHS3Nn8eg==",
   "success": true,
-  "projectFilePath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+  "projectFilePath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elite-Gadget\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Elite-Gadget\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

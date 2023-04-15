@@ -10619,11 +10619,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+      "projectUniqueName": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
       "projectName": "GTR_OKR",
-      "projectPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+      "projectPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
       "packagesPath": "C:\\Users\\Elite-Gadget\\.nuget\\packages\\",
-      "outputPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\obj\\",
+      "outputPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Elite-Gadget\\AppData\\Roaming\\NuGet\\NuGet.Config",
