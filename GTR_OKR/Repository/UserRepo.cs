@@ -67,7 +67,8 @@ namespace GTR_OKR.Repository
 
         public List<Department> GetDeptByCom(int comId)
         {
-            throw new NotImplementedException();
+            List<Department> depList= _db.Departments.Where(c=>c.ComId==comId).ToList();
+            return depList;
         }
 
         public User GetDeptById(int id)

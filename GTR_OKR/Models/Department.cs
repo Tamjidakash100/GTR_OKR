@@ -8,6 +8,7 @@ namespace GTR_OKR.Models
         public string DepartmentName { get; set; }
         public int ComId { get; set; }
         [ForeignKey(nameof(ComId))]
+        [NotMapped]
         public Company Company { get; set; }
     }
 }
