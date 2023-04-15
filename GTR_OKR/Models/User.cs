@@ -11,6 +11,7 @@ namespace GTR_OKR.Models
         [EmailAddress]
         public string Email { get; set; }
         public string Phone { get; set; }
+        public string Role { get; set; }
         public int DeptId { get; set; }
         public int ComId { get; set; }
         [ForeignKey(nameof(DeptId))]
