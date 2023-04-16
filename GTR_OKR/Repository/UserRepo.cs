@@ -1,9 +1,10 @@
 ﻿using GTR_OKR.Context;
 using GTR_OKR.Interfaces;
-using GTR_OKR.Models;
+using GTR_OKR.DTO;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System.Web.Http.ModelBinding;
+using GTR_OKR.Models;
 
 namespace GTR_OKR.Repository
 {
@@ -25,9 +26,16 @@ namespace GTR_OKR.Repository
             return "Failed";
         }
 
-        public string CreateDept(Department department)
+        public string CreateDept(DepartmentDTO department)
         {
-            _db.Departments.Add(department);
+            Department dp = new Department
+            {
+                Id = department.Id,
+                DepartmentName = department.DepartmentName,
+                ComId = department.ComId,
+
+            };
+            _db.Departments.Add(dp);
            var state = _db.SaveChanges();
             if(state >0)
             {
@@ -37,14 +45,21 @@ namespace GTR_OKR.Repository
             return "Failed";
         }
 
-        public string CreateUser(User user)
+        public string CreateUser(UserDTO user)
         {
             throw new NotImplementedException();
         }
 
-        public string EditCompany(Company company)
+        public string EditCompany(CompanyDTO company)
         {
-            _db.Companies.Update(company);
+            Company com = new Company
+            {
+                Id = company.Id,
+                CompanyName = company.CompanyName,
+                ComId = company.ComId,
+                Email = company.Email
+            };
+            _db.Companies.Update(com);
             var state = _db.SaveChanges();
             if (state >0)
             {
@@ -71,27 +86,27 @@ namespace GTR_OKR.Repository
             return depList;
         }
 
-        public User GetDeptById(int id)
+        public UserDTO GetDeptById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public User GetUserByEmail(string email)
+        public UserDTO GetUserByEmail(string email)
         {
             throw new NotImplementedException();
         }
 
-        public User GetUserById(int id)
+        public UserDTO GetUserById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> GetUserListByCom(int comId)
+        public List<UserDTO> GetUserListByCom(int comId)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> GetUserListByDept(int dept)
+        public List<UserDTO> GetUserListByDept(int dept)
         {
             throw new NotImplementedException();
         }

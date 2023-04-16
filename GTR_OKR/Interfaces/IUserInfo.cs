@@ -1,21 +1,22 @@
-﻿using GTR_OKR.Models;
+﻿using GTR_OKR.DTO;
+using GTR_OKR.Models;
 
 namespace GTR_OKR.Interfaces
 {
     public interface IUserInfo
     {
         string CreateCompany(Company company);
-        string EditCompany(Company company);
+        string EditCompany(CompanyDTO company);
         List<Company> GetCompanyList();
         Company GetCompanyByEmail(string email);
-        string CreateUser(User user);
-        List<User> GetUserListByCom(int comId);
-        List<User> GetUserListByDept(int dept);
-        User GetUserById(int id);
-        User GetUserByEmail(string email);
-        string CreateDept(Department department);
+        string CreateUser(UserDTO user);
+        List<UserDTO> GetUserListByCom(int comId);
+        List<UserDTO> GetUserListByDept(int dept);
+        UserDTO GetUserById(int id);
+        UserDTO GetUserByEmail(string email);
+        string CreateDept(DepartmentDTO department);
         List<Department> GetDeptByCom(int comId);
-        User GetDeptById(int id);
+        UserDTO GetDeptById(int id);
 
     }
 }

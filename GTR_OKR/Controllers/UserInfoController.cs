@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GTR_OKR.Context;
-using GTR_OKR.Models;
+using GTR_OKR.DTO;
 using GTR_OKR.Interfaces;
 using Microsoft.AspNetCore.Cors;
+using GTR_OKR.Models;
 
 namespace GTR_OKR.Controllers
 {
@@ -24,9 +25,9 @@ namespace GTR_OKR.Controllers
 
         [HttpGet]
 
-        public List<Company> Get()
+        public IActionResult Get()
         {
-            return _userInfo.GetCompanyList();
+            return Ok(_userInfo.GetCompanyList());
         }
 
         [HttpPost]
@@ -37,7 +38,7 @@ namespace GTR_OKR.Controllers
         }
 
         [HttpPut]
-        public IActionResult PutCompany(Company company)
+        public IActionResult PutCompany(CompanyDTO company)
         {
             return Ok(_userInfo.EditCompany(company));
         }
@@ -55,7 +56,7 @@ namespace GTR_OKR.Controllers
         }
 
         [HttpPost]
-         public IActionResult CreateDept([FromBody]Department department)
+         public IActionResult CreateDept([FromBody]DepartmentDTO department)
         {
             return Ok(_userInfo.CreateDept(department));
         }
