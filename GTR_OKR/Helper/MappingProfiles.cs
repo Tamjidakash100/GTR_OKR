@@ -11,6 +11,8 @@ namespace GTR_OKR.Helper
             CreateMap<DepartmentDTO, Department>();
             CreateMap<CompanyDTO, Company > ();
             CreateMap<UserDTO, User > ();
+            CreateMap<TemplateDTO, Template> ();
+            CreateMap<TasksDTO, Tasks> ();
         }
     }
 }
