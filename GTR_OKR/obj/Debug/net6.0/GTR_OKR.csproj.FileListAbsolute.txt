@@ -630,3 +630,5 @@ D:\GTR\OKR\API\GTR_OKR\GTR_OKR\GTR_OKR\obj\Debug\net6.0\GTR_OKR.genruntimeconfig
 D:\GTR\OKR\API\GTR_OKR\GTR_OKR\GTR_OKR\obj\Debug\net6.0\ref\GTR_OKR.dll
 D:\GTR\OKR\API\GTR_OKR\GTR_OKR\GTR_OKR\bin\Debug\net6.0\AutoMapper.dll
 D:\GTR\OKR\API\GTR_OKR\GTR_OKR\GTR_OKR\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+G:\GTR-OKR\GTR_OKR\GTR_OKR\bin\Debug\net6.0\AutoMapper.dll
+G:\GTR-OKR\GTR_OKR\GTR_OKR\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

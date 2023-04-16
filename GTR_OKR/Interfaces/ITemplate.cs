@@ -9,5 +9,11 @@ namespace GTR_OKR.Interfaces
         String EditTemp(TemplateDTO templateDTO);   
         String DeleteTemp(Template templateDTO);
         List<Template> GetTempOwner(int uId);
+
+        string CreateTask(TasksDTO tasks); 
+        String UpdateTask(TasksDTO tasks);
+        String DeleteTask(int id);
+        List<Tasks> GetTaskListByTemp(int tId);
+
     }
 }
