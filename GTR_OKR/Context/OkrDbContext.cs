@@ -13,7 +13,7 @@ namespace GTR_OKR.Context
         public DbSet<Project> Projects { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Department> Departments { get; set; }
-        public DbSet<ProjTempRelation> projTempRelations { get; set; }
+        public DbSet<ProjTempRelation> ProjTempRelations { get; set; }
         public DbSet<Tasks> Tasks { get; set; }
         public DbSet<UserProjectAssign> UserProjectAssigns { get; set; }
         public DbSet<UserTaskAssign> UserTaskAssigns { get; set; }

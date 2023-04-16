@@ -27,5 +27,6 @@ namespace GTR_OKR.Models
         public Understanding Understanding { get; set; }
         [ForeignKey(nameof(DeptId))]
         public Department Department { get; set;}
+        public List<Template> Templates { get; set; }
     }
 }

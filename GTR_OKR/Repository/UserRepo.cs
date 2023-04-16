@@ -47,7 +47,13 @@ namespace GTR_OKR.Repository
 
         public string CreateUser(UserDTO user)
         {
-            throw new NotImplementedException();
+            _db.Add(user);
+            var state = _db.SaveChanges();
+            if (state >0)
+            {
+                return "Successful";
+            }
+            return "Failed";
         }
 
         public string EditCompany(CompanyDTO company)
@@ -86,29 +92,29 @@ namespace GTR_OKR.Repository
             return depList;
         }
 
-        public UserDTO GetDeptById(int id)
+        public Department GetDeptById(int id)
         {
-            throw new NotImplementedException();
+            return _db.Departments.Include(c=>c.Company).FirstOrDefault(c=>c.Id==id);
         }
 
-        public UserDTO GetUserByEmail(string email)
+        public User GetUserByEmail(string email)
         {
-            throw new NotImplementedException();
+            return _db.Users.FirstOrDefault(c=>c.Email==email);
         }
 
-        public UserDTO GetUserById(int id)
+        public User GetUserById(int id)
         {
-            throw new NotImplementedException();
+            return _db.Users.FirstOrDefault(c => c.Id == id);
         }
 
-        public List<UserDTO> GetUserListByCom(int comId)
+        public List<User> GetUserListByCom(int comId)
         {
-            throw new NotImplementedException();
+            return _db.Users.Where(c=>c.ComId==comId).ToList();
         }
 
-        public List<UserDTO> GetUserListByDept(int dept)
+        public List<User> GetUserListByDept(int deptId)
         {
-            throw new NotImplementedException();
+            return _db.Users.Where(c => c.DeptId == deptId).ToList();
         }
     }
 }
