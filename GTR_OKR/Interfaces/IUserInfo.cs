@@ -10,13 +10,13 @@ namespace GTR_OKR.Interfaces
         List<Company> GetCompanyList();
         Company GetCompanyByEmail(string email);
         string CreateUser(UserDTO user);
-        List<UserDTO> GetUserListByCom(int comId);
-        List<UserDTO> GetUserListByDept(int dept);
-        UserDTO GetUserById(int id);
-        UserDTO GetUserByEmail(string email);
+        List<User> GetUserListByCom(int comId);
+        List<User> GetUserListByDept(int dept);
+        User GetUserById(int id);
+        User GetUserByEmail(string email);
         string CreateDept(DepartmentDTO department);
         List<Department> GetDeptByCom(int comId);
-        UserDTO GetDeptById(int id);
+        Department GetDeptById(int id);
 
     }
 }
