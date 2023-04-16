@@ -6,7 +6,7 @@ namespace GTR_OKR.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Template> Templates { get; set; }
+        public List<Tasks> Tasks { get; set; }
         public int OwnerId { get; set; }
         [ForeignKey(nameof(User))]
         public User Owner { get; set; }
