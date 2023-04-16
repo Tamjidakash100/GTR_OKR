@@ -8,6 +8,6 @@ namespace GTR_OKR.Interfaces
         string CreateTemp(TemplateDTO templateDTO);
         String EditTemp(TemplateDTO templateDTO);   
         String DeleteTemp(Template templateDTO);
-        List<Template> GetTempProj(int pid);
+        List<Template> GetTempOwner(int uId);
     }
 }
