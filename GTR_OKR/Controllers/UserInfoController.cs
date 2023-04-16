@@ -25,7 +25,7 @@ namespace GTR_OKR.Controllers
 
         [HttpGet]
 
-        public IActionResult Get()
+        public IActionResult GetCompList()
         {
             return Ok(_userInfo.GetCompanyList());
         }
@@ -65,6 +65,43 @@ namespace GTR_OKR.Controllers
         {
             var deptList = _userInfo.GetDeptByCom(comId);
             return Ok(deptList);
+        }
+
+        [HttpGet]
+        public IActionResult GetDeptById(int id) 
+        {
+            return Ok(_userInfo.GetDeptById(id));   
+        }
+
+        [HttpPost]
+        public IActionResult CreateUser(UserDTO user)
+        {
+            return Ok(_userInfo.CreateUser(user));
+        }
+
+        [HttpGet]
+        public IActionResult GetUserById(int id)
+        {
+            return Ok(_userInfo.GetUserById(id));
+        }
+
+        [HttpGet]
+        public IActionResult GetUserByEmail(string email) 
+        {
+            return Ok(_userInfo.GetUserByEmail(email)); 
+        }
+
+        [HttpGet]
+
+        public IActionResult GetUserByComId(int comId)
+        {
+            return Ok(_userInfo.GetUserListByCom(comId));
+        }
+
+        [HttpGet]
+        public IActionResult GetUserByDept(int deptId)
+        {
+            return Ok(_userInfo.GetUserListByDept(deptId)); 
         }
     }
 }

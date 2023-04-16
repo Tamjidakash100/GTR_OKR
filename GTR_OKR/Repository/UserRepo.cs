@@ -15,6 +15,7 @@ namespace GTR_OKR.Repository
         {
             _db = db;
         }
+        //controller done..
         public string CreateCompany(Company company)
         {
             _db.Companies.Add(company);
@@ -26,6 +27,7 @@ namespace GTR_OKR.Repository
             return "Failed";
         }
 
+        //controller done..
         public string CreateDept(DepartmentDTO department)
         {
             Department dp = new Department
@@ -45,9 +47,20 @@ namespace GTR_OKR.Repository
             return "Failed";
         }
 
+        //controller done..
         public string CreateUser(UserDTO user)
         {
-            _db.Add(user);
+            User userInfo = new User
+            {
+                UserId = user.UserId,
+                Name = user.Name,
+                Email = user.Email,
+                Phone = user.Phone,
+                Role = user.Role,
+                ComId = user.ComId,
+                DeptId = user.DeptId
+            };
+            _db.Add(userInfo);
             var state = _db.SaveChanges();
             if (state >0)
             {
@@ -56,6 +69,7 @@ namespace GTR_OKR.Repository
             return "Failed";
         }
 
+        //controller done..
         public string EditCompany(CompanyDTO company)
         {
             Company com = new Company
@@ -74,44 +88,51 @@ namespace GTR_OKR.Repository
             return "Failed";
         }
 
+        //controller done..
         public Company GetCompanyByEmail(string email)
         {
             Company company =  _db.Companies.FirstOrDefault(c=>c.Email==email) ;
             
             return company;
         }
-
+        //controller done...
         public List<Company> GetCompanyList()
         {
             return _db.Companies.ToList();
         }
 
+        //controller done..
         public List<Department> GetDeptByCom(int comId)
         {
             List<Department> depList= _db.Departments.Where(c=>c.ComId==comId).ToList();
             return depList;
         }
 
+        //controller done..
         public Department GetDeptById(int id)
         {
             return _db.Departments.Include(c=>c.Company).FirstOrDefault(c=>c.Id==id);
         }
 
+        //controller done..
         public User GetUserByEmail(string email)
         {
             return _db.Users.FirstOrDefault(c=>c.Email==email);
         }
 
+        //controller done..
         public User GetUserById(int id)
         {
             return _db.Users.FirstOrDefault(c => c.Id == id);
         }
 
+        //controller done..
         public List<User> GetUserListByCom(int comId)
         {
             return _db.Users.Where(c=>c.ComId==comId).ToList();
         }
 
+        //contrller done...
         public List<User> GetUserListByDept(int deptId)
         {
             return _db.Users.Where(c => c.DeptId == deptId).ToList();
