@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj": {}
+    "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj": {}
   },
   "projects": {
-    "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj": {
+    "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+        "projectUniqueName": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
         "projectName": "GTR_OKR",
-        "projectPath": "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
-        "packagesPath": "C:\\Users\\SHAFIN\\.nuget\\packages\\",
-        "outputPath": "G:\\GTR-OKR\\GTR_OKR\\GTR_OKR\\obj\\",
+        "projectPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\GTR_OKR.csproj",
+        "packagesPath": "C:\\Users\\Elite-Gadget\\.nuget\\packages\\",
+        "outputPath": "D:\\GTR\\OKR\\API\\GTR_OKR\\GTR_OKR\\GTR_OKR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SHAFIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Elite-Gadget\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.9, )"
@@ -94,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

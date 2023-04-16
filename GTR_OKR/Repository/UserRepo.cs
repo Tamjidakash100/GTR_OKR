@@ -5,15 +5,19 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System.Web.Http.ModelBinding;
 using GTR_OKR.Models;
+using AutoMapper;
 
 namespace GTR_OKR.Repository
 {
     public class UserRepo : IUserInfo
     {
         OkrDbContext _db;
-        public UserRepo(OkrDbContext db)
+        private readonly IMapper _mapper;
+
+        public UserRepo(OkrDbContext db, IMapper mapper)
         {
             _db = db;
+            _mapper = mapper;
         }
         //controller done..
         public string CreateCompany(Company company)
@@ -30,18 +34,19 @@ namespace GTR_OKR.Repository
         //controller done..
         public string CreateDept(DepartmentDTO department)
         {
-            Department dp = new Department
-            {
-                Id = department.Id,
-                DepartmentName = department.DepartmentName,
-                ComId = department.ComId,
+            //Department dept = new Department
+            //{
+            //    Id = department.Id,
+            //    DepartmentName = department.DepartmentName,
+            //    ComId = department.ComId,
 
-            };
-            _db.Departments.Add(dp);
+            //};
+            var dept = _mapper.Map<Department>(department);
+            _db.Departments.Add(dept);
            var state = _db.SaveChanges();
             if(state >0)
             {
-                return "Successfull";
+                return "Successful";
                     
             }
             return "Failed";

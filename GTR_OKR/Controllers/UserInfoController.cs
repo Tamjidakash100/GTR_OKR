@@ -10,6 +10,7 @@ using GTR_OKR.DTO;
 using GTR_OKR.Interfaces;
 using Microsoft.AspNetCore.Cors;
 using GTR_OKR.Models;
+using AutoMapper;
 
 namespace GTR_OKR.Controllers
 {
@@ -18,9 +19,12 @@ namespace GTR_OKR.Controllers
     public class UserInfoController : ControllerBase
     {
         private readonly IUserInfo _userInfo;
-        public UserInfoController(IUserInfo userInfo)
+        private readonly IMapper _mapper;
+
+        public UserInfoController(IUserInfo userInfo, IMapper mapper)
         {
             _userInfo = userInfo;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -31,7 +35,7 @@ namespace GTR_OKR.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostCompany(Company company)
+        public IActionResult PostCompany([FromBody]Company company)
         {
             var msg = _userInfo.CreateCompany(company);
             return Ok(msg);
@@ -74,7 +78,7 @@ namespace GTR_OKR.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateUser(UserDTO user)
+        public IActionResult CreateUser([FromBody]UserDTO user)
         {
             return Ok(_userInfo.CreateUser(user));
         }
