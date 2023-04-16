@@ -18,6 +18,7 @@ builder.Services.AddCors(options =>
         });
 });
 builder.Services.AddTransient<IUserInfo, UserRepo>();
+builder.Services.AddTransient<ITemplate, TemplateRepo>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
