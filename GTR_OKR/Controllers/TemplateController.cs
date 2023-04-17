@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GTR_OKR.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TemplateController : ControllerBase
     {
@@ -40,6 +40,34 @@ namespace GTR_OKR.Controllers
         {
             var tempList = _template.GetTempOwner(ownerId);
             return Ok(tempList);
+        }
+        [HttpGet]
+        public IActionResult GetTaskByUser(int? userId)
+        {
+            if (userId == null)
+            {
+                return BadRequest();
+            }
+            var tasks = _template.GetTaskListByUser(userId);
+            if (tasks == null)
+            {
+                return NotFound();
+            }
+            return Ok(tasks);
+        }
+        [HttpGet]
+        public IActionResult GetTempByUser(int? userId)
+        {
+            if (userId == null)
+            {
+                return BadRequest();
+            }
+            var tasks = _template.GetTempListByUser(userId);
+            if (tasks == null)
+            {
+                return NotFound();
+            }
+            return Ok(tasks);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GTR_OKR.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace GTR_OKR.Context
@@ -16,6 +17,11 @@ namespace GTR_OKR.Context
         public DbSet<Tasks> Tasks { get; set; }
         public DbSet<Template> Templates { get; set; }
         public DbSet<Understanding> Understandings { get; set; }
+        public DbSet<ProjTempRelation> ProjTempRelations { get; set; }
+        public DbSet<UserProjectAssign> UserProjectAssigns { get; set; }
+        public DbSet<UserTempAssign> UserTempAssigns { get; set; }
+        public DbSet<UserTaskAssign> UserTaskAssigns { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProjTempRelation>()
@@ -47,7 +53,7 @@ namespace GTR_OKR.Context
                 .WithMany(pt => pt.UserTasks)
                 .HasForeignKey(c => c.TaskId);
             modelBuilder.Entity<UserTaskAssign>()
-                .HasOne(p => p.Task)
+                .HasOne(p => p.Tasks)
                 .WithMany(pt => pt.UserTasks)
                 .HasForeignKey(c => c.UserId);
 

@@ -6,7 +6,7 @@ namespace GTR_OKR.Models
     {
         public int TaskId { get; set; }
         public int UserId { get; set; }
-        public Tasks Task { get; set; }
+        public Tasks Tasks { get; set; }
         public User User { get; set; }
     }
 }

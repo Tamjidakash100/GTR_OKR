@@ -17,6 +17,8 @@ namespace GTR_OKR.Interfaces
         string CreateDept(DepartmentDTO department);
         List<Department> GetDeptByCom(int comId);
         Department GetDeptById(int id);
+        List<User> GetUserListByTemp(int? tempId);
+        List<User> GetUserListByTask(int? taskId);
 
     }
 }

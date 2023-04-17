@@ -107,5 +107,33 @@ namespace GTR_OKR.Controllers
         {
             return Ok(_userInfo.GetUserListByDept(deptId)); 
         }
+        [HttpGet]
+        public IActionResult GetUserByTask(int? taskId)
+        {
+            if (taskId == null)
+            {
+                return BadRequest();
+            }
+            var users = _userInfo.GetUserListByTask(taskId);
+            if (users == null)
+            {
+                return NotFound();
+            }
+            return Ok(users);
+        }
+        [HttpGet]
+        public IActionResult GetUserByTemp(int? tempId)
+        {
+            if (tempId == null)
+            {
+                return BadRequest();
+            }
+            var users = _userInfo.GetUserListByTemp(tempId);
+            if (users == null)
+            {
+                return NotFound();
+            }
+            return Ok(users);
+        }
     }
 }

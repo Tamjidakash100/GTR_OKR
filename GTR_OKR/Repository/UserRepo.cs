@@ -142,5 +142,18 @@ namespace GTR_OKR.Repository
         {
             return _db.Users.Where(c => c.DeptId == deptId).ToList();
         }
+
+        public List<User> GetUserListByTemp(int? tempId)
+        {
+           
+                return _db.UserTempAssigns.Where(c => c.TempId == tempId).Select(c => c.User).ToList();
+            
+        }
+
+        public List<User> GetUserListByTask(int? taskId)
+        {
+                return _db.UserTaskAssigns.Where(c => c.TaskId == taskId).Select(c => c.User).ToList();
+            
+        }
     }
 }

@@ -115,8 +115,31 @@ namespace GTR_OKR.Repository
                 _context.SaveChanges();
                 return "Deleted Successful..";
             }
-            return "An Error Occured..!!";
+            return "An Error Occurred..!!";
 
         }
+
+        public List<Tasks> GetTaskListByUser(int? userId)
+        {
+            if (UserExists(userId))
+            {
+                return _context.UserTaskAssigns.Where(c=>c.UserId==userId).Select(c=>c.Tasks).ToList();
+            }
+            return new List<Tasks>();
+        }
+        public List<Template> GetTempListByUser(int? userId)
+        {
+            if (UserExists(userId))
+            {
+                return _context.UserTempAssigns.Where(c => c.UserId == userId).Select(c => c.Template).ToList();
+            }
+            return new List<Template>();
+        }
+
+        public bool UserExists(int? userId)
+        {
+            return _context.Users.Any(c=>c.UserId == userId);
+        }
+        
     }
 }
