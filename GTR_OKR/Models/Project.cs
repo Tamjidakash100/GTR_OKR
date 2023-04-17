@@ -21,12 +21,11 @@ namespace GTR_OKR.Models
         public Company Company { get; set; }
         [ForeignKey(nameof(OwnerId))]
         public User Owner { get; set; }
-        [ForeignKey(nameof(TempId))]
-        public Template Template { get; set; }
         [ForeignKey(nameof(UndId))]
         public Understanding Understanding { get; set; }
         [ForeignKey(nameof(DeptId))]
         public Department Department { get; set;}
-        public List<Template> Templates { get; set; }
+        public List<ProjTempRelation> PTemplates { get; set; }
+        public List<UserProjectAssign> UserProjects { get; set; }
     }
 }

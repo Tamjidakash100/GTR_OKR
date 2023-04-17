@@ -15,5 +15,6 @@ namespace GTR_OKR.Models
         public Template Template { get; set; }
         [ForeignKey(nameof(PId))]
         public Project Project { get; set; }
+        public List<UserTaskAssign> UserTasks { get; set; }
     }
 }

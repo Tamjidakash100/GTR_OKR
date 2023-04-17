@@ -40,7 +40,7 @@ namespace GTR_OKR.Repository
 
        
 
-        public string DeleteTemp(Template template)
+        public string DeleteTemp(TemplateDTO templateDTO)
         {
             var template = _mapper.Map<Template>(templateDTO);
             _context.Templates.Remove(template);

@@ -18,5 +18,8 @@ namespace GTR_OKR.Models
         public Department Department { get; set; }
         [ForeignKey(nameof(ComId))]
         public Company Company { get; set; }
+        public List<UserTaskAssign> UserTasks { get; set; }
+        public List<UserProjectAssign> UserProjects { get; set; }
+        public List<UserTempAssign> UserTemps { get; set; }
     }
 }
